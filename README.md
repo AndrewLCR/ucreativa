@@ -1,2 +1,1 @@
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"><a>
+[![PHP Composer](https://github.com/AndrewLCR/ucreativa/actions/workflows/php.yml/badge.svg)](https://github.com/AndrewLCR/ucreativa/actions/workflows/php.yml)
