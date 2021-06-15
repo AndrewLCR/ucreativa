@@ -28,11 +28,10 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
-      
-    - name: Laravel PHPUnit
+    - name: PhpUnit for Laravel
       # You may pin to the exact commit or the version.
-      # uses: nathanheffley/laravel-phpunit-action@1ac680fbc5f20621343f0d7ba450a02b807c576e
-      uses: nathanheffley/laravel-phpunit-action@v0.1.0
+      # uses: svikramjeet/git-action-laravel-phpunit@4bad6262594f6a8b7c7b7be49f2e5191fc3f50f1
+      uses: svikramjeet/git-action-laravel-phpunit@v1.0
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
