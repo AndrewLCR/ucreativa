@@ -69,4 +69,6 @@ Temporary Items
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/laravel,visualstudiocode,macos
+### Docker
+storage/
+data/
