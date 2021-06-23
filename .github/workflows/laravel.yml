@@ -53,3 +53,7 @@ jobs:
         id: scan
         with:
           image: "zh4d0w/ucreativa-project:latest"
+          grype-version: 0.13.0
+          acs-report-enable: true
+          fail-build: false
+          severity-cutoff: critical
