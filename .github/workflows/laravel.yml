@@ -49,9 +49,7 @@ jobs:
           push: true
           tags: zh4d0w/ucreativa-project:latest
       - name: Scan image
-        uses: anchore/scan-action@v1
+        uses: anchore/scan-action@v2
         id: scan
         with:
-          image-reference: "zh4d0w/ucreativa-project:latest"
-          dockerfile-path: ".Dockerfile"
-          fail-build: true
+          image: "zh4d0w/ucreativa-project:latest"
