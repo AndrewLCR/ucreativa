@@ -42,18 +42,9 @@ pipeline {
             }
         }
         stage("Docker push") {
-            environment {
-                DOCKER_USERNAME = credentials("docker-user")
-                DOCKER_PASSWORD = credentials("docker-password")
-            }
             steps {
-                echo "docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}"
+                echo "docker login --username DOCKER_USERNAME --password DOCKER_PASSWORD"
                 echo "docker push danielgara/laravel8cd"
-            }
-        }
-        stage("Deploy to staging") {
-            steps {
-                echo "docker run -d --rm -p 80:80 --name laravel8cd danielgara/laravel8cd"
             }
         }
         stage("Acceptance test curl") {
