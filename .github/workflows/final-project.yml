@@ -29,14 +29,29 @@ jobs:
           touch database/database.sqlite
   unit-tests:
     runs-on: ubuntu-latest
+    needs: laravel-environment-setup
     steps:
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
         run: vendor/bin/phpunit
+  scan-vulnerabilities:
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    steps:
+      - name: Scan image
+        uses: anchore/scan-action@v2
+        id: scan
+        with:
+          image: "zh4d0w/ucreativa-project:latest"
+          grype-version: 0.13.0
+          acs-report-enable: true
+          fail-build: false
+          severity-cutoff: critical
   build-docker-image:
     runs-on: ubuntu-latest
+    needs: scan-vulnerabilities
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
@@ -54,15 +69,3 @@ jobs:
         with:
           push: true
           tags: zh4d0w/ucreativa-project:latest
-  scan-vulnerabilities:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Scan image
-        uses: anchore/scan-action@v2
-        id: scan
-        with:
-          image: "zh4d0w/ucreativa-project:latest"
-          grype-version: 0.13.0
-          acs-report-enable: true
-          fail-build: false
-          severity-cutoff: critical
