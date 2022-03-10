@@ -35,7 +35,7 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
-        run: composer require --dev phpunit/phpunit ^latest
+        run: composer require --dev phpunit/phpunit
       - name: Execute PHPUnit tests
         run: vendor/bin/phpunit
   scan-vulnerabilities:
