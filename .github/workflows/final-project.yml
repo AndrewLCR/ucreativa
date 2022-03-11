@@ -98,6 +98,6 @@ jobs:
           script: |
             mkdir laravel
             cd laravel
-            git clone git@github.com:AndrewLCR/ucreativa.git
+            git clone git@github.com:AndrewLCR/ucreativa.git .
             docker compose up -d
             echo 'Deployment successful to DigitalOcean'

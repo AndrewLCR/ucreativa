@@ -42,7 +42,7 @@ class ProductController extends BaseController
 
         $product = Product::create($input);
 
-        return $this->sendResponse(new ProductResource($product), 'Product created successfully.');
+        return $this->sendResponse(new ProductResource($product), 'Producto sincronizado blah');
     }
 
     /**
