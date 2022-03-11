@@ -94,7 +94,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
           username: ${{secrets.SSH_USERNAME}}
-          password: ${{secrets.SSH_PASSWORD}}
+          passphrase: ${{secrets.SSH_PASSWORD}}
           script: |
             mkdir laravel
             cd laravel
