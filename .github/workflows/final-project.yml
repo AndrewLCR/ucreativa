@@ -94,7 +94,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
           username: ${{secrets.SSH_USERNAME}}
-          run: |
+          script: |
             mkdir laravel
             cd laravel
             git clone git@github.com:AndrewLCR/ucreativa.git .
